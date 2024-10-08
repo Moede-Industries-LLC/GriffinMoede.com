@@ -5,8 +5,7 @@ import Toggle from "./Toggle";
 import { useLights } from "../../contexts/LightsContext";
 
 const LightSwitch: FC = (): ReactElement => {
-  // const { areLightsOn, changeLights } = useLights();
-  const [areLightsOn, changeLights] = useState<boolean>(false);
+  const { areLightsOn, changeLights } = useLights();
 
   return (
     <div
@@ -17,7 +16,7 @@ const LightSwitch: FC = (): ReactElement => {
         id="plate"
         className="flex flex-col items-center justify-center"
         onClick={() => {
-          changeLights(!areLightsOn);
+          changeLights();
         }}
       >
         <Screw position="top" />
@@ -29,23 +28,15 @@ const LightSwitch: FC = (): ReactElement => {
             {areLightsOn ? (
               <>
                 <Toggle isOn={true}></Toggle>
-                <div id="light-switch-label">ON</div>
               </>
             ) : (
               <>
-                <div id="light-switch-label">OFF</div>
                 <Toggle isOn={false}></Toggle>
               </>
             )}
           </div>
         </div>
         <Screw position="bottom" />
-        {!areLightsOn && (
-          <>
-            <div id="overlay-dark"></div>
-            <div id="overlay-dim"></div>
-          </>
-        )}
       </div>
     </div>
   );
