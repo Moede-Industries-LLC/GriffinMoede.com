@@ -130,10 +130,18 @@
 
 #light-switch {
   background-color: beige;
-  width: 40%;
-  height: 15%;
+  width: 30px;
+  height: 40px;
   border-radius: 10px;
   z-index: 3;
+  margin-left: 500px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+#light-switch:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 60px 10px #fff;
 }
 
 #plate {
@@ -141,12 +149,12 @@
   width: 97%;
   height: 97%;
   border-radius: 10px;
-  gap: 9px;
+  gap: 2px;
 }
 
 #screw {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   border-radius: 10px;
   background-color: grey;
 }
@@ -158,8 +166,8 @@
 }
 
 #switch-box {
-  width: 30%;
-  height: 40%;
+  width: 40%;
+  height: 55%;
   background-color: rgb(136, 136, 136);
   border-radius: 4px;
   position: relative;
@@ -181,10 +189,11 @@
 }
 
 #toggle {
-  width: 150%;
-  height: 50%;
+  width: 10px;
+  height: 30px;
   background-color: grey;
   border-radius: 4px;
+  /* transform: rotateY(25deg); */
 }
 
 #light-switch-label {
@@ -196,14 +205,19 @@
 #overlay-dark {
   position: absolute;
   left: 0;
-  width: calc(100vw - 200px);
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
-  background-color: rgb(0, 0, 0, 0.96);
+  background: radial-gradient(
+    ellipse closest-side at 15% 60%,
+    /* Light at bottom-right corner */ rgba(255, 255, 255, 0) 0%,
+    /* Transparent in the corner */ rgba(0, 0, 0, 0.83) 80%
+      /* rgba(0, 0, 0, 1) 50%  */
+  );
   align-items: center;
   pointer-events: none;
-  /* z-index: 1; */
+  z-index: 1;
 }
 
 #overlay-dim {
@@ -216,5 +230,30 @@
   background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
   pointer-events: none;
-  /* z-index: 2; */
+  z-index: 9999;
+}
+
+.glow::before {
+  height: 200px;
+  width: 200px;
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  box-shadow: 0 0 10px 5px rgba(234, 232, 158, 0.895);
+  background-color: yellow;
+}
+
+.soundcloudwidget {
+  position: absolute;
+  margin-top: 230px;
+  margin-left: 180px;
+}
+
+.boombox {
+  width: 60vw;
+  height: 60vh;
+  background-image: url("../../assets/boombox.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
 }
