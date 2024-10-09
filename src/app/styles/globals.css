@@ -29,124 +29,89 @@
   margin: 0;
   display: block;
   position: absolute;
-  border: 2px solid green;
-  font: 10vw "calibri";
+  border: 1px solid black;
+  font: 50pt "calibri";
   text-align: center;
 }
 
 #room .n {
   width: 40vw;
-  height: 70%;
-}
-
-#room .e,
-.w {
-  width: 1000px;
-  height: 70%;
-}
-
-#room .n {
+  height: 450px;
   transform: rotateY(0deg) translateZ(0px);
+  background-image: url("../../assets/Wall.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #room .e {
+  width: 1000px;
+  height: 450px;
   transform: rotateY(-90deg) translateZ(-20vw) translateX(490px);
-}
-
-#room .s {
-  transform: rotateY(180deg) translateZ(-40vw);
+  background-image: url("../../assets/Wall.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #room .w {
+  width: 1000px;
+  height: 450px;
   transform: rotateY(90deg) translateZ(-20vw) translateX(-490px);
-}
-
-#room .t {
-  transform: rotateX(90deg) translateZ(10vw) translateY(20vw);
+  background-image: url("../../assets/Wall.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform-style: preserve-3d;
 }
 
 #room .b {
-  transform: rotateX(90deg) translateZ(-10vw) translateY(20vw);
+  width: 40vw;
+  height: 1000px;
+  transform: rotateX(90deg) translateZ(-225px) translateY(225px);
+  background-image: url("../../assets/Carpet.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#room .t {
+  width: 40vw;
+  height: 1000px;
+  transform: rotateX(90deg) translateZ(225px) translateY(225px);
+  background-image: url("../../assets/Ceiling.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-/* #room .show-n {
-  transform: translateZ(0px) rotateY(0deg);
-}
-#room .show-e {
-  transform: translateX(-600px) translateZ(600px) rotateY(90deg);
-}
-#room .show-s {
-  transform: translateZ(1200px) rotateY(180deg);
-}
-#room .show-w {
-  transform: translateX(600px) translateZ(600px) rotateY(-90deg);
-}
-#room .show-t {
-  transform: translateY(-600px) translateZ(-300px) rotateX(-90deg);
-}
-#room .show-b {
-  transform: translateY(-600px) translateZ(300px) rotateX(90deg);
-} */
-
-#room .n {
-  background-color: rgba(255, 0, 0, 0.3);
-}
-
-#room .e {
-  background-color: rgba(255, 255, 0, 0.3);
-}
-
-#room .s {
-  background-color: rgba(0, 255, 255, 0.3);
-}
-
-#room .w {
-  background-color: rgba(0, 0, 255, 0.3);
-}
-
-#room {
-  animation: 5s hspinner;
-}
-
-/* @keyframes hspinner {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(-360deg);
-  }
-} */
-
-.wall {
-  border-left: 2px solid green;
-  height: 100vh;
-  width: 200px;
-  background-color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-#light-switch {
+.light-switch {
+  background-image: url("../../assets/lightswitch.png");
+  background-size: cover;
   background-color: beige;
-  width: 40%;
-  height: 15%;
-  border-radius: 10px;
+  width: 30px;
+  height: 40px;
   z-index: 3;
+  margin-left: 400px;
+  margin-top: 150px;
+  cursor: pointer;
 }
 
+.light-switch.on {
+  transform: rotateY(180deg) rotate(180deg);
+}
+
+.light-switch:hover {
+  box-shadow:
+    0 0 60px 10px #fff,
+    0 0 0 1px #fff;
+}
+/*
 #plate {
   background-color: blue;
   width: 97%;
   height: 97%;
   border-radius: 10px;
-  gap: 9px;
+  gap: 2px;
 }
 
 #screw {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   border-radius: 10px;
   background-color: grey;
 }
@@ -158,8 +123,8 @@
 }
 
 #switch-box {
-  width: 30%;
-  height: 40%;
+  width: 40%;
+  height: 55%;
   background-color: rgb(136, 136, 136);
   border-radius: 4px;
   position: relative;
@@ -181,10 +146,11 @@
 }
 
 #toggle {
-  width: 150%;
-  height: 50%;
+  width: 10px;
+  height: 30px;
   background-color: grey;
   border-radius: 4px;
+  /* transform: rotateY(25deg); 
 }
 
 #light-switch-label {
@@ -193,17 +159,156 @@
   color: rgb(31, 31, 31);
 }
 
+*/
+
+#computer-desk {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  margin-left: calc((-8% + 70px) * 4);
+  top: 50vh;
+  background-image: url("../../assets/computerdesk.png");
+  /* background-color: blue; */
+  background-size: 50%;
+  background-repeat: no-repeat;
+  z-index: 4;
+  transform: translateZ(500px) rotateY(calc(20deg * 2));
+}
+
+#computer-desk:hover {
+  cursor: pointer;
+}
+
+/* #computer-desk-2 {
+  width: 200px;
+  height: 200px;
+  margin-left: 500px;
+  margin-left: calc((-8% + 70px) * 4);
+  margin-top: -30px;
+  background-color: blue;
+  background-image: url("../../assets/computerdesk.png");
+  background-color: blue;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  z-index: 4;
+  transform: rotateY(-90deg) translateZ(100px) translateX(200px);
+} */
+
+#phone-stand {
+  position: absolute;
+  width: 150px;
+  height: 190px;
+  margin-right: calc((-9%) * 4);
+  top: 56vh;
+  background-image: url("../../assets/phonenightstand.png");
+  /* background-color: blue; */
+  background-size: 70%;
+  background-repeat: no-repeat;
+  z-index: 4;
+  transform: translateZ(500px) rotateY(calc(-20deg * 2));
+}
+
+#phone-stand:hover {
+  cursor: pointer;
+}
+
+#guitar-main {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  margin-left: 47%;
+  margin-top: calc(8vh * 2);
+  background-image: url("../../assets/guitar.png");
+  /* background-color: blue; */
+  background-size: 30%;
+  background-repeat: no-repeat;
+  z-index: 4;
+  transform: translateZ(650px) rotateY(calc(20deg * 2));
+}
+
+#guitar:hover {
+  cursor: pointer;
+}
+
+#paintings {
+  position: absolute;
+  width: 400px;
+  height: 180px;
+  /* background-color: blue; */
+
+  left: 47%;
+  top: 12vh;
+  /* margin-top: 47%; */
+  /* margin-top: calc(8vh * 2); */
+  /* background-image: url("../../assets/paintings.png"); */
+  /* background-color: blue; */
+  /* background-size: 30%;
+  /* background-repeat: no-repeat; */
+  z-index: 4;
+  /* transform: translateZ(650px) rotateY(calc(20deg * 2)); */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#paintings:hover {
+  cursor: pointer;
+}
+
+#painting-1 {
+  height: 120px;
+  width: 120px;
+  margin-bottom: -12px;
+  background-image: url("../../assets/painting_1.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#painting-2 {
+  height: 120px;
+  width: 120px;
+  margin-bottom: -10px;
+  background-image: url("../../assets/painting_2.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#painting-3 {
+  height: 200px;
+  width: 200px;
+  background-image: url("../../assets/painting_3.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#painting-4 {
+  position: relative;
+  margin-top: 48px;
+  height: 200px;
+  width: 200px;
+  background-image: url("../../assets/painting_4.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
 #overlay-dark {
   position: absolute;
   left: 0;
-  width: calc(100vw - 200px);
+  width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
-  background-color: rgb(0, 0, 0, 0.96);
+  background: radial-gradient(
+    ellipse closest-side at 15% 60%,
+    /* Light at bottom-right corner */ rgba(255, 255, 255, 0) 0%,
+    /* Transparent in the corner */ rgba(0, 0, 0, 0.83) 80%
+      /* rgba(0, 0, 0, 1) 50%  */
+  );
   align-items: center;
   pointer-events: none;
-  /* z-index: 1; */
+  z-index: 1;
 }
 
 #overlay-dim {
@@ -216,5 +321,55 @@
   background-color: rgba(0, 0, 0, 0.5);
   align-items: center;
   pointer-events: none;
-  /* z-index: 2; */
+  z-index: 9999;
+}
+
+.glow::before {
+  height: 200px;
+  width: 200px;
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  box-shadow: 0 0 10px 5px rgba(234, 232, 158, 0.895);
+  background-color: yellow;
+}
+
+.soundcloud-widget {
+  width: 100%;
+  /* margin-top: 230px;
+  margin-left: 180px; */
+  /* background-color: aqua; */
+}
+
+.soundcloud-icon {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  /* box-shadow: 10px 0 10px 10px rgba(37, 37, 37, 0.5); */
+}
+
+.boombox {
+  width: 60vw;
+  height: 60vh;
+  background-image: url("../../assets/boombox.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+#guitar-isolate {
+  height: 600px;
+  width: 200px;
+  /* background-color: blue; */
+  background-image: url("../../assets/guitar.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.music-room {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-image: url("../../assets/Wall.jpg");
+  background-size: cover;
 }

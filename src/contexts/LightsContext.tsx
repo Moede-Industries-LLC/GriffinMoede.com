@@ -19,6 +19,7 @@ const LightsProvider: FC<LightsProviderProps> = ({
   const [areLightsOn, setAreLightsOn] = useState<boolean>(false);
 
   const changeLights = (): void => {
+    console.log("areLightsOn", areLightsOn);
     setAreLightsOn(!areLightsOn);
   };
 

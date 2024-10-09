@@ -5,50 +5,51 @@ import Toggle from "./Toggle";
 import { useLights } from "../../contexts/LightsContext";
 
 const LightSwitch: FC = (): ReactElement => {
-  // const { areLightsOn, changeLights } = useLights();
-  const [areLightsOn, changeLights] = useState<boolean>(false);
+  const { areLightsOn, changeLights } = useLights();
 
-  return (
-    <div
-      id="light-switch"
-      className="flex flex-col items-center justify-center"
-    >
-      <div
-        id="plate"
-        className="flex flex-col items-center justify-center"
-        onClick={() => {
-          changeLights(!areLightsOn);
-        }}
-      >
-        <Screw position="top" />
-        <div
-          id="switch-box"
-          className="flex flex-col items-center justify-center"
-        >
-          <div id="toggle-box">
-            {areLightsOn ? (
-              <>
-                <Toggle isOn={true}></Toggle>
-                <div id="light-switch-label">ON</div>
-              </>
-            ) : (
-              <>
-                <div id="light-switch-label">OFF</div>
-                <Toggle isOn={false}></Toggle>
-              </>
-            )}
-          </div>
-        </div>
-        <Screw position="bottom" />
-        {!areLightsOn && (
-          <>
-            <div id="overlay-dark"></div>
-            <div id="overlay-dim"></div>
-          </>
-        )}
-      </div>
-    </div>
-  );
+  if (areLightsOn) {
+    return (
+      <div className="light-switch on" onClick={() => changeLights()}></div>
+    );
+  } else {
+    return (
+      <div className="light-switch off" onClick={() => changeLights()}></div>
+    );
+  }
+
+  // return (
+  //   <div
+  //     id="light-switch"
+  //     className="flex flex-col items-center justify-center"
+  //   >
+  //     <div
+  //       id="plate"
+  //       className="flex flex-col items-center justify-center"
+  //       onClick={() => {
+  //         changeLights();
+  //       }}
+  //     >
+  //       <Screw position="top" />
+  //       <div
+  //         id="switch-box"
+  //         className="flex flex-col items-center justify-center"
+  //       >
+  //         <div id="toggle-box">
+  //           {areLightsOn ? (
+  //             <>
+  //               <Toggle isOn={true}></Toggle>
+  //             </>
+  //           ) : (
+  //             <>
+  //               <Toggle isOn={false}></Toggle>
+  //             </>
+  //           )}
+  //         </div>
+  //       </div>
+  //       <Screw position="bottom" />
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default LightSwitch;
