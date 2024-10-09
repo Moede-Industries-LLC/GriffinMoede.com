@@ -216,14 +216,14 @@
   position: absolute;
   width: 240px;
   height: 240px;
-  margin-left: 47%;
+  margin-left: 46%;
   margin-top: calc(8vh * 2);
   background-image: url("../../assets/guitar.png");
   /* background-color: blue; */
   background-size: 30%;
   background-repeat: no-repeat;
   z-index: 4;
-  transform: translateZ(650px) rotateY(calc(20deg * 2));
+  transform: translateZ(680px) rotateY(calc(2.1 * -33deg));
 }
 
 #guitar:hover {
