@@ -13,10 +13,12 @@ const Room: FC = (): ReactElement => {
         <div id="room">
           <div id="computer-desk"></div>
           <div id="phone-stand"></div>
-          <div id="guitar-main"></div>
+          
 
           <figure className="n"></figure>
-          <figure className="e"></figure>
+          <figure className="e">
+            <div id="guitar-main"></div>
+          </figure>
           <figure className="w">
             <LightSwitch />
             <div id="paintings">

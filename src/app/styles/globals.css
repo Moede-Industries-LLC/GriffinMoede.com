@@ -86,8 +86,8 @@
   width: 30px;
   height: 40px;
   z-index: 3;
-  margin-left: 400px;
-  margin-top: 150px;
+  margin-left: 440px;
+  margin-top: 300px;
   cursor: pointer;
 }
 
@@ -215,15 +215,16 @@
 #guitar-main {
   position: absolute;
   width: 240px;
-  height: 240px;
-  margin-left: 47%;
+  height: 260px;
+  right: 15%;
   margin-top: calc(8vh * 2);
   background-image: url("../../assets/guitar.png");
   /* background-color: blue; */
   background-size: 30%;
   background-repeat: no-repeat;
   z-index: 4;
-  transform: translateZ(650px) rotateY(calc(20deg * 2));
+  display: flex-start;
+  align-items: center;
 }
 
 #guitar:hover {
